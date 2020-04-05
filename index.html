@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flip.min.js"></script>
+		<script type="text/javascript" src="js/social.js"></script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/88ca1fb7bc.js" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/ui.css">
+		<!------ Include the above in your HEAD tag ---------->
+
+		<style type="text/css">
+			div.bhoechie-tab-container{
+				margin-top: 1em;
+				margin-left: 23em;
+			}
+			div.bhoechie-tab-menu div.list-group>a.active,
+			div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+			div.bhoechie-tab-menu div.list-group>a.active .fa{
+			  background-color: #424242;
+			  background-image: #424242;
+			  color: #ffffff;
+			}
+			div.bhoechie-tab-menu div.list-group>a.active:after{
+			  content: '';
+			  position: absolute;
+			  left: 100%;
+			  top: 50%;
+			  margin-top: -13px;
+			  border-left: 0;
+			  border-bottom: 13px solid transparent;
+			  border-top: 13px solid transparent;
+			  border-left: 10px solid #424242;
+			}
+			.bhoechie-tab-content active{
+				background: #fe3c72;
+			}
+			#rowspan span {
+			  position: relative;
+			  display: inline-block;
+			  margin: 20px 80px;
+			}
+
+
+			.clean-slide {
+			  position: relative;
+			  display: inline-block;
+			  width: 215px;
+			  padding: 10px 0 10px 15px;
+			  font-family: "Open Sans", sans;
+			  font-weight: 400;
+			  color: #377D6A;
+			  background: #efefef;
+			  border: 0;
+			  border-radius: 3px;
+			  outline: 0;
+			  text-indent: 60px;
+			  transition: all .3s ease-in-out;
+			}
+
+			.clean-slide::-webkit-input-placeholder {
+			  color: #efefef;
+			  text-indent: 0;
+			  font-weight: 300;
+			}
+
+			.clean-slide + label {
+			  display: inline-block;
+			  position: absolute;
+			  transform: translateX(0);
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  padding: 13px 15px;
+			  font-size: 11px;
+			  font-weight: 700;
+			  text-transform: uppercase;
+			  color: #032429;
+			  text-align: left;
+			  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+			  transition: all .3s ease-in-out, color .3s ease-out;
+			  border-top-left-radius: 3px;
+			  border-bottom-left-radius: 3px;
+			  overflow: hidden;
+			}
+
+			.clean-slide + label:after {
+			  content: "";
+			  position: absolute;
+			  top: 0;
+			  right: 100%;
+			  bottom: 0;
+			  width: 100%;
+			  background: #7AB893;
+			  z-index: -1;
+			  transform: translate(0);
+			  transition: all .3s ease-in-out;
+			  border-top-left-radius: 3px;
+			  border-bottom-left-radius: 3px;
+			}
+
+			.clean-slide:focus,
+			.clean-slide:active {
+			  color: #377D6A;
+			  text-indent: 0;
+			  background: #fff;
+			  border-top-left-radius: 0;
+			  border-bottom-left-radius: 0;
+			}
+
+			.clean-slide:focus::-webkit-input-placeholder,
+			.clean-slide:active::-webkit-input-placeholder {
+			  color: #aaa;
+			}
+
+			.clean-slide:focus + label,
+			.clean-slide:active + label {
+			  color: #fff;
+			  text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+			  transform: translateX(-100%);
+			}
+
+			.clean-slide:focus + label:after,
+			.clean-slide:active + label:after {
+			  transform: translate(100%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+		        <div class="col-lg-7 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+		              <div class="list-group">
+		                <a href="#" id="socialGeneral" class="list-group-item active text-center">
+		                  <h4 class="fas fa-users"></h4><br/>Social
+		                </a>
+		                <a href="#" id="professionalGeneral" class="list-group-item text-center">
+		                  <h4 class="fas fa-users"></h4><br/>Business & Emails
+		                </a>
+		                <a href="#" id="shoppingGeneral" class="list-group-item text-center">
+		                  <h4 class="fas fa-cart-plus"></h4><br/>Shopping
+		                </a>
+		                <a href="#" id="streamingGeneral" class="list-group-item text-center">
+		                  <h4 class="fas fa-play"></h4><br/>Streaming
+		                </a>
+		                <a href="#" id="paymentGeneral" class="list-group-item text-center">
+		                  <h4 class="fas fa-credit-card"></h4><br/>Payment
+		                </a>
+		                <a href="#" id="miscGeneral" class="list-group-item text-center">
+		                  <h4 class="fas fa-tasks"></h4><br/>Miscellaneous
+		                </a>
+		              </div>
+		            </div>
+			        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab" style="background: #fe3c72;height: 46em;">
+			                <!-- flight section -->
+			                <div class="bhoechie-tab-content active" style="background: #fe3c72;">
+			                    <center>
+			                      <div id="rowspan">
+									  <span>
+									    <input class="clean-slide" id="insta" type="text" placeholder="Enter the password" />
+									    <label for="Instagram">Instagram&emsp; <i style='font-size: 14pt; 
+									    color:#F783AC;' class="fab fa-instagram"></i></label>
+									  </span>
+									  <br>
+									  <span>
+									    <input class="clean-slide" id="fb" type="text" placeholder="Enter the password" />
+									    <label for="Facebook">Facebook&emsp; <i style='font-size: 14pt; 
+									    color:#1778F2;' class="fab fa-facebook"></i></label>
+									  </span>
+									  <br>
+									  <span>
+									    <input class="clean-slide" id="tweet" type="text" placeholder="Enter the password" />
+									    <label for="Twitter">Twitter&emsp;&emsp;&nbsp; <i style='font-size: 14pt; 
+									    color:#43BDF0;' class="fab fa-twitter"></i></label>
+									  </span>
+									  <br>
+									  <span>
+									    <input class="clean-slide" id="vk" type="text" placeholder="Enter the password" />
+									    <label for="VK">VK &emsp;&emsp;&emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-vk"></i></label>
+									  </span>
+									  <br>
+									  <span>
+									  	<div id="card">
+										    <input class="clean-slide" id="other1social" type="text" placeholder="Enter the Application Name" />
+										    <label for="Other1">Other 1 &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+										    color:black;' class="fas fa-random"></i></label>
+									    
+									    	<div class="front" style="display: none;">
+									    	</div>
+											<div class="back" style="display: none;">
+									    		<input class="clean-slide" id="other1pass" type="text" placeholder="Enter the password" />
+									    		<label for="Other1Pass">Pass 1 &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+											    color:black;' class="fas fa-random"></i></label>
+									    	</div>
+									    </div>
+									  </span>
+									  <br>
+									  <span>
+									    <div id="card2">
+										    <input class="clean-slide" id="other2social" type="text" placeholder="Enter the Application Name" />
+										    <label for="Other2">Other 2 &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+										    color:black;' class="fas fa-random"></i></label>
+									    
+									    	<div class="front" style="display: none;">
+									    	</div>
+											<div class="back" style="display: none;">
+									    		<input class="clean-slide" id="other2pass" type="text" placeholder="Enter the password" />
+									    		<label for="Other2Pass">Pass 2 &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+											    color:black;' class="fas fa-random"></i></label>
+									    	</div>
+									    </div>
+									  </span>
+
+									</div>
+			                    </center>
+			                </div>
+			                <!-- train section -->
+			                <div class="bhoechie-tab-content" style="background: #fe3c72;">
+			                    <center>
+			                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
+			                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+			                      <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
+			                    </center>
+			                </div>
+			    
+			                <!-- hotel search -->
+			                <div class="bhoechie-tab-content" style="background: #fe3c72;">
+			                    <center>
+			                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
+			                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+			                      <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
+			                    </center>
+			                </div>
+			                <div class="bhoechie-tab-content" style="background: #fe3c72;">
+			                    <center>
+			                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
+			                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+			                      <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
+			                    </center>
+			                </div>
+			                <div class="bhoechie-tab-content" style="background: #fe3c72;">
+			                    <center>
+			                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
+			                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+			                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
+			                    </center>
+			                </div>
+			            </div>
+		        	</div>
+			  </div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+			    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+			        e.preventDefault();
+			        $(this).siblings('a.active').removeClass("active");
+			        $(this).addClass("active");
+			        var index = $(this).index();
+			        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+			        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+			    });
+
+			     
+			});
+		</script>
+	</body>
+</html>
+
+
+	
