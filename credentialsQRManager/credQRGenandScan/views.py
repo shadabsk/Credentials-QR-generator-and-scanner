@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 import qrcode,os
+from datetime import datetime
+
 
 # Create your views here.
 def index(request):
@@ -31,8 +33,11 @@ def generateSocialQR(request):
 		if not os.path.exists(directory):
 		    os.makedirs(directory)
 
-		img.save(directory+'SocialQR.png')
+		now = datetime.now()
+		dt_string = now.strftime("%d-%m-%Y %H-%M-%S")
 
-		data={'True':qrsocialdata}
+		img.save(directory+'SocialQR '+dt_string+'.png')
+
+		data={'True':dt_string}
 		return JsonResponse(data)
 
