@@ -1,22 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title></title>
-		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.flip.min.js"></script>
-		<script type="text/javascript" src="js/social.js"></script>
+		<script type="text/javascript" src={% static "js/jquery-3.3.1.min.js" %}></script>
+		<script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+		<script type="text/javascript" src={% static "js/jquery.flip.min.js" %}></script>
+		<script type="text/javascript" src={% static "js/social.js" %}></script>
+		<script src={% static "js/fontawesome.js"%} type="text/javascript"></script>
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://kit.fontawesome.com/88ca1fb7bc.js" crossorigin="anonymous"></script>
-
-		<link rel="stylesheet" type="text/css" href="css/ui.css">
+		<link rel="stylesheet" type="text/css" href={% static "css/bootstrap.min.css" %}>
+		<link rel="stylesheet" type="text/css" href={% static "css/ui.css" %}>
 		<!------ Include the above in your HEAD tag ---------->
 
 		<style type="text/css">
 			div.bhoechie-tab-container{
 				margin-top: 1em;
-				margin-left: 23em;
+				margin-left: 0em;
 			}
 			div.bhoechie-tab-menu div.list-group>a.active,
 			div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
@@ -42,7 +42,7 @@
 			#rowspan span {
 			  position: relative;
 			  display: inline-block;
-			  margin: 20px 80px;
+			  margin: 20px 30px;
 			}
 
 
@@ -128,19 +128,35 @@
 			.clean-slide:active + label:after {
 			  transform: translate(100%);
 			}
+			.float{
+				position:fixed;
+				width:60px;
+				height:60px;
+				bottom:60px;
+				right:240px;
+				background-color:#0C9;
+				color:#FFF;
+				border-radius:50px;
+				text-align:center;
+				box-shadow: 2px 2px 3px #999;
+			}
+
+			.my-float{
+				margin-top:16px;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
-		        <div class="col-lg-7 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
-		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+		        <div class="col-lg-12 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+		            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
 		              <div class="list-group">
 		                <a href="#" id="socialGeneral" class="list-group-item active text-center">
-		                  <h4 class="fas fa-users"></h4><br/>Social
+		                  <h4 class="fas fa-plus-circle"></h4><br/>Generate
 		                </a>
 		                <a href="#" id="professionalGeneral" class="list-group-item text-center">
-		                  <h4 class="fas fa-users"></h4><br/>Business & Emails
+		                  <h4 class="fas fa-qrcode"></h4><br/>Scan
 		                </a>
 		                <a href="#" id="shoppingGeneral" class="list-group-item text-center">
 		                  <h4 class="fas fa-cart-plus"></h4><br/>Shopping
@@ -156,35 +172,121 @@
 		                </a>
 		              </div>
 		            </div>
-			        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab" style="background: #fe3c72;height: 46em;">
+			        <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 bhoechie-tab" style="background: #fe3c72;height: 50em;">
 			                <!-- flight section -->
 			                <div class="bhoechie-tab-content active" style="background: #fe3c72;">
+			                	{% csrf_token %}
 			                    <center>
 			                      <div id="rowspan">
 									  <span>
 									    <input class="clean-slide" id="insta" type="text" placeholder="Enter the password" />
-									    <label for="Instagram">Instagram&emsp; <i style='font-size: 14pt; 
+									    <label for="Instagram" id='lbinsta'>Instagram&emsp; <i style='font-size: 14pt; 
 									    color:#F783AC;' class="fab fa-instagram"></i></label>
 									  </span>
-									  <br>
+									  
 									  <span>
 									    <input class="clean-slide" id="fb" type="text" placeholder="Enter the password" />
-									    <label for="Facebook">Facebook&emsp; <i style='font-size: 14pt; 
+									    <label for="Facebook" id="lbfb">Facebook&emsp; <i style='font-size: 14pt; 
 									    color:#1778F2;' class="fab fa-facebook"></i></label>
 									  </span>
-									  <br>
+									  
 									  <span>
 									    <input class="clean-slide" id="tweet" type="text" placeholder="Enter the password" />
 									    <label for="Twitter">Twitter&emsp;&emsp;&nbsp; <i style='font-size: 14pt; 
 									    color:#43BDF0;' class="fab fa-twitter"></i></label>
 									  </span>
-									  <br>
+									  
 									  <span>
-									    <input class="clean-slide" id="vk" type="text" placeholder="Enter the password" />
-									    <label for="VK">VK &emsp;&emsp;&emsp;&emsp;&emsp;<i style='font-size: 14pt; 
-									    color:#4C75A3;' class="fab fa-vk"></i></label>
+									    <input class="clean-slide" id="snp" type="text" placeholder="Enter the password" />
+									    <label for="SNAP">Snapchat &emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-snapchat-square"></i></label>
 									  </span>
-									  <br>
+
+									  <span>
+									    <input class="clean-slide" id="tktok" type="text" placeholder="Enter the password" />
+									    <label for="tiktok">TikTok &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-tumblr"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="linked" type="text" placeholder="Enter the password" />
+									    <label for="Linkedin">Linkedin &emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-linkedin"></i></label>
+									  </span>
+									  
+									  
+									  <span>
+									    <input class="clean-slide" id="gml" type="text" placeholder="Enter the password" />
+									    <label for="Gmail">Google &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-google"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="mcrsft" type="text" placeholder="Enter the password" />
+									    <label for="Microsoft">Microsoft &emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-microsoft"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="yhoo" type="text" placeholder="Enter the password" />
+									    <label for="Yahoo">Yahoo &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-yahoo"></i></label>
+									  </span>
+									  
+									  <span>
+									    <input class="clean-slide" id="hotml" type="text" placeholder="Enter the password" />
+									    <label for="Hotmail">Hotmail &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fas fa-envelope"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="amzn" type="text" placeholder="Enter the password" />
+									    <label for="Amazon">Amazon &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-amazon"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="flpkt" type="text" placeholder="Enter the password" />
+									    <label for="Flipkart">Flipkart &emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fas fa-shopping-cart"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="ptm" type="text" placeholder="Enter the password" />
+									    <label for="Paytm">Paytm &emsp;&emsp;&emsp;&emsp;&nbsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fas fa-credit-card"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="gthb" type="text" placeholder="Enter the password" />
+									    <label for="Github">Github &emsp;&emsp;&emsp;&nbsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-github"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="ntflx" type="text" placeholder="Enter the password" />
+									    <label for="Netflix">Netflix &emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fas fa-play"></i></label>
+									  </span>
+									  
+									  <span>
+									    <input class="clean-slide" id="vt" type="text" placeholder="Enter the password" />
+									    <label for="Voot">Voot &emsp;&emsp;&emsp;&emsp;&emsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fas fa-play"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="htstr" type="text" placeholder="Enter the password" />
+									    <label for="Hotstar">Hotstar &emsp;&emsp;&nbsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fas fa-star"></i></label>
+									  </span>
+
+									  <span>
+									    <input class="clean-slide" id="z5" type="text" placeholder="Enter the password" />
+									    <label for="Zee5">Zee5 &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;<i style='font-size: 14pt; 
+									    color:#4C75A3;' class="fab fa-cuttlefish"></i></label>
+									  </span>
+
 									  <span>
 									  	<div id="card">
 										    <input class="clean-slide" id="other1social" type="text" placeholder="Enter the Application Name" />
@@ -200,7 +302,7 @@
 									    	</div>
 									    </div>
 									  </span>
-									  <br>
+									  
 									  <span>
 									    <div id="card2">
 										    <input class="clean-slide" id="other2social" type="text" placeholder="Enter the Application Name" />
@@ -217,8 +319,16 @@
 									    </div>
 									  </span>
 
+									  
 									</div>
 			                    </center>
+			                    <a href="#" class="float" id="socialQr">
+									<i class="fa fa-qrcode my-float" style="font-size: 20pt;"></i>
+								</a>
+								<div id="downprev" style="display: none;">
+									<a href="/static/QR/SocialQR/SocialQR.png" target="_blank">Preview</a>
+									<a href="/static/QR/SocialQR/SocialQR.png" download="socialQR.png">Download</a>
+								</div>
 			                </div>
 			                <!-- train section -->
 			                <div class="bhoechie-tab-content" style="background: #fe3c72;">
@@ -267,7 +377,6 @@
 			        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
 			        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
 			    });
-
 			     
 			});
 		</script>

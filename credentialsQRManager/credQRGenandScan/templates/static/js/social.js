@@ -18,10 +18,16 @@ $(document).ready(function(){
 	});
 
 	$('#insta').on('blur',function(){
+		$('#lbinsta').html(
+			"Instagram&emsp; <i style='font-size: 14pt;color:#F783AC;' class='fab fa-instagram'></i>"
+		);
 		insta = $('#insta').val()
 		$('#insta').val('')
 	});
 	$('#fb').on('blur',function(){
+		$('#lbfb').html(
+			"Facebook&emsp; <i style='font-size: 14pt; color:#1778F2;' class='fab fa-facebook'></i>"
+		);
 		fb = $('#fb').val()
 		$('#fb').val('')
 	});
@@ -56,9 +62,15 @@ $(document).ready(function(){
 
 
 	$('#insta').on('focus',function(){
+		$('#lbinsta').html(
+			"<i style='font-size: 14pt;color:#F783AC;' class='fab fa-instagram'></i>"
+		);
 		$('#insta').val(insta)
 	});
 	$('#fb').on('focus',function(){
+		$('#lbfb').html(
+			"<i style='font-size: 14pt; color:#1778F2;' class='fab fa-facebook'></i>"
+		);
 		$('#fb').val(fb)
 	});
 	$('#tweet').on('focus',function(){
@@ -88,4 +100,46 @@ $(document).ready(function(){
 		$('#other2pass').val(other2pass)
 	});
 
+	$('#socialQr').on('click',function(){
+		if(insta!="" || fb!="" || tweet!="" || vk!="" || ((other1social!="" && other1pass!="") || (other2social!="" && other2pass!="")) ){
+			var qrdata="fakedata╡fakedata"
+			if(insta!=""){
+				qrdata+="╠Instagram ╡ "+insta
+			}
+			if(fb!=""){
+				qrdata+="╠Facebook ╡ "+fb
+			}
+			if(tweet!=""){
+				qrdata+="╠Twitter ╡ "+tweet
+			}
+			if(vk!=""){
+				qrdata+="╠VK ╡ "+vk
+			}
+			if(other1social!="" && other1pass!=""){
+				qrdata+="╠"+other1social+" ╡ "+other1pass
+			}
+			if(other2social!="" && other2pass!=""){
+				qrdata+="╠"+other2social+" ╡ "+other2pass+"☰"
+			}
+			$.ajax({
+				type:'POST',
+                url:'generateSocialQR',
+                data:{
+                    qrsocialdata:qrdata,
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                },
+                cache:false,
+                success:function(available){
+                    if(available.True)
+                    {
+                     	$('#downprev').show();
+                    }
+                    else
+                    {
+                     	alert('failure');
+                    }
+                },
+			});
+		}
+	});
 });
