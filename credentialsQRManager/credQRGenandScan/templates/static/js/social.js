@@ -339,68 +339,108 @@ $(document).ready(function(){
 
 	$('#socialQr').on('click',function(){
 		if(insta!="" || fb!="" || tweet!="" || snp!="" || tktok!="" || linked!="" || gml!="" || mcrsft!="" || yhoo!="" || hotml!="" || amzn!="" || flpkt!="" || ptm!="" || gthb!="" || ntflx!="" || vt!="" || htstr!="" || z5!="" ||((other1social!="" && other1pass!="") || (other2social!="" && other2pass!="")) ){
-			var qrdata="fakedata╡fakedata"
+			var qrdata="fakedata9892327169fakedata"
 			if(insta!=""){
-				qrdata+="╠Instagram ╡ "+insta
+				qrdata+="7506455707Instagram 9892327169 "+insta
+			}else{
+				qrdata+="7506455707Instagram 9892327169 "+"NA"
 			}
 			if(fb!=""){
-				qrdata+="╠ Facebook ╡ "+fb
+				qrdata+="7506455707 Facebook 9892327169 "+fb
+			}else{
+				qrdata+="7506455707 Facebook 9892327169 "+"NA"
 			}
 			if(tweet!=""){
-				qrdata+="╠ Twitter ╡ "+tweet
+				qrdata+="7506455707 Twitter 9892327169 "+tweet
+			}else{
+				qrdata+="7506455707 Twitter 9892327169 "+"NA"
 			}
 			if(snp!=""){
-				qrdata+="╠ Snapchat ╡ "+snp
+				qrdata+="7506455707 Snapchat 9892327169 "+snp
+			}else{
+				qrdata+="7506455707 Snapchat 9892327169 "+"NA"
 			}
 			if(tktok!=""){
-				qrdata+="╠ TikTok ╡ "+tktok
+				qrdata+="7506455707 TikTok 9892327169 "+tktok
+			}else{
+				qrdata+="7506455707 TikTok 9892327169 "+"NA"
 			}
 			if(linked!=""){
-				qrdata+="╠ Linkedin ╡ "+linked
+				qrdata+="7506455707 Linkedin 9892327169 "+linked
+			}else{
+				qrdata+="7506455707 Linkedin 9892327169 "+"NA"
 			}
 			if(gml!=""){
-				qrdata+="╠ Google ╡ "+gml
+				qrdata+="7506455707 Google 9892327169 "+gml
+			}else{
+				qrdata+="7506455707 Google 9892327169 "+"NA"
 			}
 			if(mcrsft!=""){
-				qrdata+="╠ Microsoft ╡ "+mcrsft
+				qrdata+="7506455707 Microsoft 9892327169 "+mcrsft
+			}else{
+				qrdata+="7506455707 Microsoft 9892327169 "+"NA"
 			}
 			if(yhoo!=""){
-				qrdata+="╠ Yahoo ╡ "+yhoo
+				qrdata+="7506455707 Yahoo 9892327169 "+yhoo
+			}else{
+				qrdata+="7506455707 Yahoo 9892327169 "+"NA"
 			}
 			if(hotml!=""){
-				qrdata+="╠ Hotmail ╡ "+hotml
+				qrdata+="7506455707 Hotmail 9892327169 "+hotml
+			}else{
+				qrdata+="7506455707 Hotmail 9892327169 "+"NA"
 			}
 			if(amzn!=""){
-				qrdata+="╠ Amazon ╡ "+amzn
+				qrdata+="7506455707 Amazon 9892327169 "+amzn
+			}else{
+				qrdata+="7506455707 Amazon 9892327169 "+"NA"
 			}
 			if(flpkt!=""){
-				qrdata+="╠ Flipkart ╡ "+flpkt
+				qrdata+="7506455707 Flipkart 9892327169 "+flpkt
+			}else{
+				qrdata+="7506455707 Flipkart 9892327169 "+"NA"
 			}
 			if(ptm!=""){
-				qrdata+="╠ Paytm ╡ "+ptm
+				qrdata+="7506455707 Paytm 9892327169 "+ptm
+			}else{
+				qrdata+="7506455707 Paytm 9892327169 "+"NA"
 			}
 			if(gthb!=""){
-				qrdata+="╠ Github ╡ "+gthb
+				qrdata+="7506455707 Github 9892327169 "+gthb
+			}else{
+				qrdata+="7506455707 Github 9892327169 "+"NA"
 			}
 			if(ntflx!=""){
-				qrdata+="╠ Netflix ╡ "+ntflx
+				qrdata+="7506455707 Netflix 9892327169 "+ntflx
+			}else{
+				qrdata+="7506455707 Netflix 9892327169 "+"NA"
 			}
 			if(vt!=""){
-				qrdata+="╠ Voot ╡ "+vt
+				qrdata+="7506455707 Voot 9892327169 "+vt
+			}else{
+				qrdata+="7506455707 Voot 9892327169 "+"NA"
 			}
 			if(htstr!=""){
-				qrdata+="╠ Hotstar ╡ "+htstr
+				qrdata+="7506455707 Hotstar 9892327169 "+htstr
+			}else{
+				qrdata+="7506455707 Hotstar 9892327169 "+"NA"
 			}
 			if(z5!=""){
-				qrdata+="╠ Zee5 ╡ "+z5
+				qrdata+="7506455707 Zee5 9892327169 "+z5
+			}else{
+				qrdata+="7506455707 Zee5 9892327169 "+"NA"
 			}
 			if(other1social!="" && other1pass!=""){
-				qrdata+="╠ "+other1social+" ╡ "+other1pass
+				qrdata+="7506455707 "+other1social+" 9892327169 "+other1pass
+			}else{
+				qrdata+="7506455707 "+other1social+" 9892327169 "+"NA"
 			}
 			if(other2social!="" && other2pass!=""){
-				qrdata+="╠ "+other2social+" ╡ "+other2pass
+				qrdata+="7506455707 "+other2social+" 9892327169 "+other2pass
+			}else{
+				qrdata+="7506455707 "+other2social+" 9892327169 "+"NA"
 			}
-			qrdata+="☰"
+			qrdata+="8898112336"
 			$.ajax({
 				type:'POST',
                 url:'generateSocialQR',
@@ -434,4 +474,27 @@ $(document).ready(function(){
 	 $('#demo').on('hide.bs.modal', function (e) {
 	     $('#demo .modal-dialog').attr('class', 'modal-dialog zoomOutDown animated');
 	  })
+
+	$('#professionalGeneral').on('click',function(){
+		$('#demoScanner').modal('show');
+		$('.img-box').hide();
+		$('#frontModal').show();
+	});
+	$('#demoScanner').on('show.bs.modal', function (e) {
+	     $('#demoScanner .modal-dialog').attr('class', 'modal-dialog flipInY animated');
+	  })
+	 $('#demoScanner').on('hide.bs.modal', function (e) {
+	     $('#demoScanner .modal-dialog').attr('class', 'modal-dialog flip animated');
+	  })
+
+	 $("#uploadImage").on('click', function(e){
+        e.preventDefault();
+        $("#upload").trigger('click');
+    });
+
+	 $('#scanQR').on('click',function(){
+	 	$('#frontModal').fadeOut(200);
+	 	$('.img-box').fadeIn(2000);
+	 })
+	  
 });

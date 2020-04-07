@@ -4,5 +4,6 @@ from credQRGenandScan import views
 urlpatterns = [
     path('',views.index,name='index'),
     path('generateSocialQR',views.generateSocialQR,name='generateSocialQR'),
+    path('qrScan',views.qrScan,name='qrScan')
     
 ]
