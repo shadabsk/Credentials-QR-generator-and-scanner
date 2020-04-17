@@ -432,12 +432,15 @@ $(document).ready(function(){
 			}
 			if(other1social!="" && other1pass!=""){
 				qrdata+="7506455707 "+other1social+" 9892327169 "+other1pass
-			}else{
-				qrdata+="7506455707 "+other1social+" 9892327169 "+"NA"
+			}else if(other1social==""){
+				qrdata+="7506455707 "+"NA"+" 9892327169 "+"NA"
 			}
 			if(other2social!="" && other2pass!=""){
 				qrdata+="7506455707 "+other2social+" 9892327169 "+other2pass
-			}else{
+			}else if(other2social==""){
+				qrdata+="7506455707 "+"NA"+" 9892327169 "+"NA"
+			}
+			else{
 				qrdata+="7506455707 "+other2social+" 9892327169 "+"NA"
 			}
 			qrdata+="8898112336"
