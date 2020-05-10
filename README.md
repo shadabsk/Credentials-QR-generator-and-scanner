@@ -3,7 +3,7 @@ Password Credential manager of the popular web/mobile app with QR Generator Usin
 
 ## Getting Started
 All the source code is available inside credentialsQRManager Directory. It requires python interpreter,HTML5 Browser and Django Backend server.
-* Open the source code directory and using cmd run the server with the command "python manage.py runserver".
+* Open the source code directory and using cmd/terminal run the server with the command "python manage.py runserver".
 * Open the browser following the url as "http://localhost:8000/QRManager".	
 * If you want to change the port you can do by the running the server with the following command "python manage.py runserver <any port number of your choice eg: 8090>" and follow the url in the browser as "http://localhost:8090/QRManager".	
 
