@@ -12,6 +12,7 @@ All the source code is available inside credentialsQRManager Directory. It requi
 
 * Python 3.7x Interpreter
 * Django 2.2.5
+* HTML5 Browser
 * Python library -> qrcode, OpenCV2, PIL, pyzbar
 
 
@@ -63,7 +64,7 @@ pip install opencv-python pillow
 * Take a look at the working project demonstration. Click on the image to view the complete video
 
 
-[![Sign Language Recognition Using Hand Gestures](https://i.ytimg.com/vi/vayAYFZrfsU/maxresdefault.jpg)](https://youtu.be/vayAYFZrfsU)
+[![Password Credential manager with QR](https://i.ytimg.com/vi/vayAYFZrfsU/maxresdefault.jpg)](https://youtu.be/vayAYFZrfsU)
 
 
 ## Authors
