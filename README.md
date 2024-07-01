@@ -1,6 +1,8 @@
 # Project Title
 Password Credential manager of the popular web/mobile app with QR Generator Using Django, JQuery, VanillaJS, CSS3, Bootstrap, Ajax, Qr, wScratchPad, PIL, pyzbar, qrcode and OpenCV.
 
+My academic course mini project for human machine interaction. This application will generate a qr based upon the inputs provided and will help the end user to get all the desired passwords for the respective categories such as personal social accounts, shopping apps etc related info in one qr.
+
 ## Getting Started
 All the source code is available inside credentialsQRManager Directory. It requires python interpreter,HTML5 Browser and Django Backend server.
 * Open the source code directory and using cmd/terminal run the server with the command "python manage.py runserver".
